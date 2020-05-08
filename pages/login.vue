@@ -42,8 +42,8 @@
             <a
               id="weixin"
               class="weixin"
-              target="_blank"
-              href="http://qy.free.idcfengye.com/api/ucenter/weixinLogin/login"
+              target="_self"
+              href="http://localhost:8150/api/ucenter/wx/login"
             >
               <i class="iconfont icon-weixin" />
             </a>
@@ -84,7 +84,6 @@ export default {
   methods: {
     submitLogin() {
       loginApi.submitLogin(this.user).then(res => {
-        console.log(res)
         if (res.data.success) {
           //token放入cookie 第三个参数：作用域范围
           cookie.set("gl_token", res.data.data.token, { domain: "localhost" });
