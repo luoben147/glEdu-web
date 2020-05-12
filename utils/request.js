@@ -28,7 +28,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
     response => {
         //debugger
-        if (response.data.code == 28004) {
+        if (response.data.code == 28004) { //未登录
             console.log("response.data.resultCode是28004")
             // 返回 错误代码-1 清除ticket信息并跳转到登录页面
             //debugger
